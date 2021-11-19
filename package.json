@@ -47,7 +47,7 @@
       }
     },
     "hooks": {
-      "before:init": "run-s clean build"
+      "before:init": "run-s clean compile"
     }
   },
   "devDependencies": {
