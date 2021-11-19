@@ -1,7 +1,9 @@
 {
-  "currents": {
-    "implementation": "./src/executors/currents/currents.impl",
-    "schema": "./src/executors/cypress/schema.json",
-    "description": "Run Cypress e2e tests with Currents"
+  "executors": {
+    "currents": {
+      "implementation": "./src/executors/currents.impl",
+      "schema": "./src/executors/schema.json",
+      "description": "Run Cypress e2e tests with Currents"
+    }
   }
 }
