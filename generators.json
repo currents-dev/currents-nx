@@ -1,0 +1,22 @@
+{
+  "name": "Nx Currents",
+  "version": "0.1",
+  "schematics": {
+    "init": {
+      "factory": "./src/generators/init/init#currentsInitSchematic",
+      "schema": "./src/generators/init/schema.json",
+      "description": "Initialize the @currents/nx plugin",
+      "aliases": ["ng-add"],
+      "hidden": true
+    }
+  },
+  "generators": {
+    "init": {
+      "factory": "./src/generators/init/init#currentsInitGenerator",
+      "schema": "./src/generators/init/schema.json",
+      "description": "Initialize the @currents/nx plugin",
+      "aliases": ["ng-add"],
+      "hidden": true
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "@currents/nx",
+  "version": "0.0.1",
+  "description": "Currents plugin for Nx",
+  "author": "Andrew Goldis",
+  "homepage": "https://currents.dev",
+  "license": "MIT",
+  "keywords": [
+    "nx",
+    "nrwl",
+    "Cypress",
+    "Currents"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/currents-dev/currents-nx"
+  },
+  "bugs": {
+    "url": "https://github.com/currents-dev/currents-nx/issues"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "compile": "tsc -d",
+    "prepare": "husky install",
+    "release": "release-it",
+    "clean": "rimraf dist"
+  },
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "schematics": "./generators.json",
+  "builders": "./executors.json",
+  "ng-update": {
+    "requirements": {},
+    "migrations": "./migrations.json"
+  },
+  "release-it": {
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    },
+    "hooks": {
+      "before:init": "run-s clean build"
+    }
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^3.3.0",
+    "@types/node": "14.14.33",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "2.25.2",
+    "husky": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.2",
+    "release-it": "^14.11.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "cy2": "*",
+    "@nrwl/devkit": "*",
+    "@nrwl/linter": "*",
+    "@nrwl/workspace": "*"
+  }
+}
