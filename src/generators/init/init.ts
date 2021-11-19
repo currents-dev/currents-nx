@@ -18,7 +18,6 @@ function updateDependencies(host: Tree) {
     {},
     {
       ['@currents/nx']: nxVersion,
-      cy2: cy2Version,
     }
   );
 }
