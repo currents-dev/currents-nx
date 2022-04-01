@@ -5,67 +5,6 @@
   "outputCapture": "pipe",
   "cli": "nx",
   "properties": {
-    "key": {
-      "type": "string",
-      "description": "The key cypress should use to run tests in parallel/record the run (CI only)"
-    },
-    "record": {
-      "type": "boolean",
-      "description": "Whether or not record the results of the tests to Currents.dev",
-      "default": false
-    },
-    "parallel": {
-      "type": "boolean",
-      "description": "Whether or not the tests in parallel (CI only)",
-      "default": false
-    },
-    "baseUrl": {
-      "type": "string",
-      "description": "Use this to pass directly the address of your distant server address with the port running your application"
-    },
-    "browser": {
-      "type": "string",
-      "description": "The browser to run tests in."
-    },
-    "env": {
-      "type": "object",
-      "description": "A key-value Pair of environment variables to pass to Cypress runner"
-    },
-    "spec": {
-      "type": "string",
-      "description": "A comma delimited glob string that is provided to the Cypress runner to specify which spec files to run. i.e. '**examples/**,**actions.spec**"
-    },
-    "copyFiles": {
-      "type": "string",
-      "description": "A regex string that is used to choose what additional integration files to copy to the dist folder",
-      "x-deprecated": true
-    },
-    "ciBuildId": {
-      "type": "string",
-      "description": "A unique identifier for a run to enable grouping or parallelization."
-    },
-    "group": {
-      "type": "string",
-      "description": "A named group for recorded runs in the Cypress dashboard."
-    },
-    "ignoreTestFiles": {
-      "type": "string",
-      "description": "A String or Array of glob patterns used to ignore test files that would otherwise be shown in your list of tests. Cypress uses minimatch with the options: {dot: true, matchBase: true}. We suggest using https://globster.xyz to test what files would match."
-    },
-    "reporter": {
-      "type": "string",
-      "description": "The reporter used during cypress run"
-    },
-    "reporterOptions": {
-      "type": "string",
-      "description": "The reporter options used. Supported options depend on the reporter."
-    },
-    "testingType": {
-      "type": "string",
-      "description": "Specify the type of tests to execute",
-      "enum": ["component", "e2e"],
-      "default": "e2e"
-    },
     "cypressApiUrl": {
       "type": "string",
       "description": "Specify the endpoint for cypress agents to use",
