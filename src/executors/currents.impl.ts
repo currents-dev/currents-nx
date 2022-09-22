@@ -14,7 +14,11 @@ export default async function currentsExecutor(
 
   const result = await Promise.race([
     await runExecutor(
-      { project: context.projectName, target: options.cypressExecutor },
+      {
+        project: context.projectName,
+        target: options.cypressExecutor,
+        configuration: context.configurationName,
+      },
       { ...options, watch: false },
       context
     ),
