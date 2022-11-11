@@ -10,7 +10,10 @@ export default async function currentsExecutor(
   options: CurrentsExecutorOptions,
   context: ExecutorContext
 ) {
-  await patch(options.cypressApiUrl ?? 'https://cy.currents.dev');
+  process.env.CYPRESS_API_URL =
+    options.cypressApiUrl ?? 'https://cy.currents.dev';
+
+  await patch();
 
   const result = await Promise.race([
     await runExecutor(
@@ -27,6 +30,5 @@ export default async function currentsExecutor(
     if (!res.success) return res;
   }
 
-  await patch('https://api.cypress.io');
   return { success: true };
 }
