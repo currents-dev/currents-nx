@@ -10,10 +10,10 @@ export default async function currentsExecutor(
   options: CurrentsExecutorOptions,
   context: ExecutorContext
 ) {
-  process.env.CYPRESS_API_URL =
-    options.cypressApiUrl ?? 'https://cy.currents.dev';
-
-  await patch();
+  const apiUrl = options.cypressApiUrl ?? 'https://cy.currents.dev';
+  process.env.CYPRESS_API_URL = apiUrl;
+  
+  await patch(apiUrl);  
 
   const result = await Promise.race([
     await runExecutor(
