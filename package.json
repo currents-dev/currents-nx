@@ -70,6 +70,6 @@
     "@nrwl/devkit": "*",
     "@nrwl/linter": "*",
     "@nrwl/workspace": "*",
-    "cy2": "^3.3.0"
+    "cy2": "3.4.1"
   }
 }
