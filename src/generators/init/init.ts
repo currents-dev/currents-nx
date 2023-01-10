@@ -5,7 +5,7 @@ import {
   updateJson,
 } from '@nrwl/devkit';
 
-import { cy2Version, nxVersion } from '../../utils/versions';
+import { nxVersion } from '../../utils/versions';
 
 function updateDependencies(host: Tree) {
   updateJson(host, 'package.json', (json) => {

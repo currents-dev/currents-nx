@@ -21,6 +21,7 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "compile": "tsc -d",
+    "dev": "tsc -d --watch",
     "prepare": "husky install",
     "release": "release-it",
     "clean": "rimraf dist"
@@ -70,6 +71,6 @@
     "@nrwl/devkit": "*",
     "@nrwl/linter": "*",
     "@nrwl/workspace": "*",
-    "cy2": "3.4.1"
+    "cy2": "^4.0.3"
   }
 }
