@@ -1,3 +1,5 @@
+# [1.0.0-beta.2](https://github.com/currents-dev/currents-nx/compare/1.0.0-beta.1...1.0.0-beta.2) (2023-01-10)
+
 # [1.0.0-beta.1](https://github.com/currents-dev/currents-nx/compare/0.2.1...1.0.0-beta.1) (2023-01-10)
 
 ### Features
