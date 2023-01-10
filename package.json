@@ -1,6 +1,6 @@
 {
   "name": "@currents/nx",
-  "version": "0.2.1",
+  "version": "1.0.0-beta.1",
   "description": "Currents plugin for Nx",
   "author": "Andrew Goldis",
   "homepage": "https://currents.dev",
