@@ -1,6 +1,7 @@
 {
-  "name": "@currents/nx",
-  "version": "1.0.0-beta.2",
+  "name": "@currents/nx-monorepo",
+  "private": true,
+  "version": "0.0.0",
   "description": "Currents plugin for Nx",
   "author": "Andrew Goldis",
   "homepage": "https://currents.dev",
@@ -11,6 +12,10 @@
     "Cypress",
     "Currents"
   ],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/currents-dev/currents-nx"
@@ -19,58 +24,46 @@
     "url": "https://github.com/currents-dev/currents-nx/issues"
   },
   "scripts": {
-    "lint": "eslint . --ext .ts",
-    "compile": "tsc -d",
-    "dev": "tsc -d --watch",
-    "prepare": "husky install",
-    "release": "release-it",
-    "clean": "rimraf dist"
-  },
-  "main": "./index.js",
-  "typings": "./index.d.ts",
-  "schematics": "./generators.json",
-  "builders": "./executors.json",
-  "ng-update": {
-    "requirements": {},
-    "migrations": "./migrations.json"
-  },
-  "release-it": {
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular",
-        "infile": "CHANGELOG.md"
-      }
-    },
-    "hooks": {
-      "before:init": "run-s clean compile"
-    }
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^5.1.1",
-    "@types/node": "14.14.33",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "8.1.0",
-    "eslint-plugin-import": "2.25.2",
-    "husky": "^7.0.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.4.1",
-    "pretty-quick": "^3.1.2",
-    "release-it": "^15.6.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.5.2"
+    "@nrwl/cypress": "15.9.1",
+    "@nrwl/devkit": "^15.9.2",
+    "@nrwl/esbuild": "15.9.1",
+    "@nrwl/jest": "15.9.2",
+    "@nrwl/js": "15.9.2",
+    "@nrwl/nx-plugin": "^15.9.2",
+    "@nrwl/vite": "^15.9.1",
+    "@nrwl/web": "^15.9.1",
+    "@nrwl/workspace": "^15.9.1",
+    "@swc-node/register": "^1.4.2",
+    "@swc/cli": "~0.1.55",
+    "@swc/core": "^1.2.173",
+    "@types/jest": "^29.4.0",
+    "@types/node": "18.7.1",
+    "@vitest/ui": "^0.25.8",
+    "babel-jest": "^29.4.1",
+    "esbuild": "^0.17.5",
+    "eslint-plugin-cypress": "^2.10.3",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "jsonc-eslint-parser": "^2.1.0",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.0.5",
+    "ts-node": "10.9.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.0.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-tsconfig-paths": "^4.0.2",
+    "vitest": "^0.25.8"
   },
   "dependencies": {
-    "@nrwl/devkit": "*",
-    "@nrwl/linter": "*",
-    "@nrwl/workspace": "*",
-    "cy2": "^4.0.3"
+    "@swc/helpers": "~0.4.11",
+    "core-js": "^3.6.5",
+    "cypress-cloud": "^1.7.0",
+    "regenerator-runtime": "0.13.7",
+    "tslib": "^2.3.0"
   }
 }
