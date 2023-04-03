@@ -1,5 +1,5 @@
 {
-  "npmScope": "currents-nx-example",
+  "npmScope": "@currents",
   "affected": {
     "defaultBase": "main"
   },
@@ -17,12 +17,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -34,7 +29,7 @@
       }
     ]
   },
-  "defaultProject": "frontend",
+  "defaultProject": "web",
   "generators": {
     "@nrwl/web:application": {
       "style": "css",
@@ -50,11 +45,7 @@
   },
   "targetDefaults": {
     "test": {
-      "inputs": [
-        "default",
-        "^default",
-        "{workspaceRoot}/jest.preset.js"
-      ]
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
   }
 }

@@ -5,19 +5,21 @@ import {
   updateJson,
 } from '@nrwl/devkit';
 
-import { cypressCloudVersion } from '../../utils/versions';
+import { cypressCloudVersion, nxVersion } from '../../utils/versions';
 
 function updateDependencies(host: Tree) {
   updateJson(host, 'package.json', (json) => {
     json.dependencies = json.dependencies || {};
     delete json.dependencies['@currents/nx'];
+    delete json.dependencies['cypress-cloud'];
     return json;
   });
   return addDependenciesToPackageJson(
     host,
     {},
     {
-      ['@currents/nx']: cypressCloudVersion,
+      ['@currents/nx']: nxVersion,
+      ['cypress-cloud']: cypressCloudVersion,
     }
   );
 }
