@@ -8,8 +8,6 @@
       "executor": "@currents/nx:currents",
       "options": {
         "projectRoot": "apps/web-e2e",
-        "cypressConfig": "apps/web-e2e/cypress.config.ts",
-        "key": "KPEvZL0LDYzcZH3U",
         "parallel": true,
         "record": true,
         "tag": "nx",
