@@ -1,3 +1,17 @@
+# [1.0.0-beta.2](https://github.com/currents-dev/currents-nx/compare/1.0.0-beta.1...1.0.0-beta.2) (2023-01-10)
+
+# [1.0.0-beta.1](https://github.com/currents-dev/currents-nx/compare/0.2.1...1.0.0-beta.1) (2023-01-10)
+
+### Features
+
+- standalone implementation ([06d1ff1](https://github.com/currents-dev/currents-nx/commit/06d1ff1df3bb85fc4fd58c130aa4110529564a58))
+
+### BREAKING CHANGES
+
+- `@nrwl/cypress` no longer required, versions - the plugin is a standalone implementation that is not dependent on `@nrwl/cypress`
+
+- use the available options to configure the execution of your cypress runs
+
 - use cy2 3.4.1 for cypress 12 (a46f56f)
 
 * feat: cypress 12+ (1a9ca2b)

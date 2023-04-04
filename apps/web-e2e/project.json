@@ -1,0 +1,32 @@
+{
+  "name": "web-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "currents": {
+      "executor": "@currents/nx:currents",
+      "options": {
+        "projectRoot": "apps/web-e2e",
+        "parallel": true,
+        "record": true,
+        "tag": "nx",
+        "devServerTarget": "web:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "web:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/web-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["web"]
+}

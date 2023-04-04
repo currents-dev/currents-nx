@@ -1,0 +1,60 @@
+{
+  "name": "@currents/nx",
+  "version": "2.0.0",
+  "description": "Currents plugin for Nx",
+  "author": "Andrew Goldis",
+  "homepage": "https://currents.dev",
+  "type": "commonjs",
+  "license": "MIT",
+  "keywords": [
+    "nx",
+    "nrwl",
+    "Cypress",
+    "Currents"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/currents-dev/currents-nx"
+  },
+  "bugs": {
+    "url": "https://github.com/currents-dev/currents-nx/issues"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "compile": "tsc -d",
+    "dev": "tsc -d --watch",
+    "release": "release-it",
+    "clean": "rimraf dist"
+  },
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "schematics": "./generators.json",
+  "builders": "./executors.json",
+  "ng-update": {
+    "requirements": {},
+    "migrations": "./migrations.json"
+  },
+  "release-it": {
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    },
+    "hooks": {
+      "before:init": "run-s clean compile"
+    }
+  },
+  "dependencies": {
+    "cypress-cloud": "^1.6.0"
+  },
+  "devDependencies": {
+    "cypress": "^12.9.0"
+  }
+}
