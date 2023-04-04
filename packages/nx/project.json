@@ -11,8 +11,20 @@
         "outputPath": "dist/packages/nx",
         "main": "packages/nx/src/index.ts",
         "tsConfig": "packages/nx/tsconfig.lib.json",
-        "assets": ["packages/nx/*.md"],
-        "generatePackageJson": true
+        "assets": [
+          "README.md",
+          "packages/nx/src/**/*.json",
+          "packages/nx/generators.json",
+          "packages/nx/migrations.json",
+          "packages/nx/executors.json"
+        ]
+      }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/nx",
+        "command": "npm run release"
       }
     },
     "publish": {
@@ -20,7 +32,7 @@
       "options": {
         "command": "node tools/scripts/publish.mjs nx {args.ver} {args.tag}"
       },
-      "dependsOn": ["build"]
+      "dependsOn": ["build", "release"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

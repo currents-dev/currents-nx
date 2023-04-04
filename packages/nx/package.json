@@ -10,7 +10,8 @@
     "nx",
     "nrwl",
     "Cypress",
-    "Currents"
+    "Currents",
+    "Sorry Cypress"
   ],
   "repository": {
     "type": "git",
@@ -35,8 +36,13 @@
     "migrations": "./migrations.json"
   },
   "release-it": {
+    "git": {
+      "requireCleanWorkingDir": false,
+      "commitMessage": "chore: release v${version}",
+      "tagName": "v${version}"
+    },
     "npm": {
-      "publish": true
+      "publish": false
     },
     "github": {
       "release": true
@@ -44,17 +50,14 @@
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": "angular",
-        "infile": "CHANGELOG.md"
+        "infile": "../../CHANGELOG.md"
       }
-    },
-    "hooks": {
-      "before:init": "run-s clean compile"
     }
   },
-  "dependencies": {
-    "cypress-cloud": "^1.6.0"
-  },
   "devDependencies": {
-    "cypress": "^12.9.0"
+    "@release-it/conventional-changelog": "^5.1.1",
+    "cypress": "^12.9.0",
+    "cypress-cloud": "^1.7.0",
+    "release-it": "^15.10.1"
   }
 }

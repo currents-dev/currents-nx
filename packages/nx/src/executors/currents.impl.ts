@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-import 'dotenv/config';
-
 import {
   ExecutorContext,
   logger,

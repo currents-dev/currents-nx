@@ -81,7 +81,7 @@ export default defineConfig({
 npx nx run web-e2e:currents --key <recordKey> --ci-build-id hello-currents-nx
 ```
 
-- Update your `cypress.json` file with `projectId` obtained at https://app.currents.dev
+- Update your `currents.config.js` file with `projectId` obtained at https://app.currents.dev
 - Use the record key obtained at https://app.currents.dev
 
 ## Configuration
