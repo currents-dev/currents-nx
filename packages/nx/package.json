@@ -24,7 +24,7 @@
     "lint": "eslint . --ext .ts",
     "compile": "tsc -d",
     "dev": "tsc -d --watch",
-    "release": "release-it",
+    "release": "np",
     "clean": "rimraf dist"
   },
   "main": "./index.js",

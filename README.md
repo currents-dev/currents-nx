@@ -99,3 +99,23 @@ See the [schema.json](./src/executors/schema.json) for the list of available opt
 ### Version `1.0.0`
 
 - `@nrwl/cypress` no longer required - the plugin is a standalone implementation that is not dependent on `@nrwl/cypress`. Use the available configuration options to configure the execution of cypress runs.
+
+## Release
+
+Create a new release (changelog, tags + github)
+
+```sh
+npx nx release nx
+```
+
+Releasing beta channel:
+
+```sh
+npx nx publish nx --tag beta --otp CODE
+```
+
+Releasing latest channel:
+
+```sh
+npx nx publish nx --tag latest --otp CODE
+```

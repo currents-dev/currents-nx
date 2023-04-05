@@ -11,6 +11,7 @@
         "outputPath": "dist/packages/nx",
         "main": "packages/nx/src/index.ts",
         "tsConfig": "packages/nx/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": false,
         "assets": [
           "README.md",
           "packages/nx/src/**/*.json",
@@ -30,9 +31,9 @@
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs nx {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.js nx {args.tag} {args.otp}"
       },
-      "dependsOn": ["build", "release"]
+      "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
