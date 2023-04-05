@@ -1,4 +1,4 @@
-# Debug, troubleshoot and record Cypress CI tests in Cloud
+# NX Plugin: Debug, troubleshoot and record Cypress CI tests in Cloud
 
 [NX](https://nx.dev/) plugin for running cypress tests using [Currents](https://currents.dev) or [Sorry Cypress](https://sorry-cypress.dev).
 
@@ -16,11 +16,12 @@ npx nx run web-e2e:currents --key <recordKey> --ci-build-id hello-currents-nx
 
 ## Setup
 
-Install `@currents/nx`
+Install npm dependencies:
 
 ```sh
-npm i --save-dev @currents/nx
-npx nx g @currents/nx:init <destination_project>
+npm i --save-dev @currents/nx cypress-cloud
+# install cypress if needed
+npm i --save-dev cypress
 ```
 
 Add target `currents` to your project configuration:
@@ -35,6 +36,7 @@ Add target `currents` to your project configuration:
         "record": true,
         "parallel": true,
         "cypressConfig": "apps/app-e2e/cypres.config.ts",
+        // ... start a dev server if needed
         "devServerTarget": "my-react-app:serve",
         "testingType": "e2e"
       }
@@ -48,6 +50,8 @@ Create a new configuration file: `currents.config.js` next to `cypress.config.{j
 ```js
 // currents.config.js
 module.exports = {
+  // Get therecord key from https://app.currents.dev, can be any value for self-hosted instance of Sorry Cypress
+  recordKey: 'XXX',
   // Set the `projectId` and the record key obtained from https://app.currents.dev or your self-hosted instance of Sorry Cypress
   projectId: 'Ij0RfK',
   // Sorry Cypress users - set the director service URL
@@ -88,7 +92,7 @@ npx nx run web-e2e:currents --key <recordKey> --ci-build-id hello-currents-nx
 
 Options can be configured in `project.json` when defining the executor, or when invoking it. Read more about how to configure targets and executors here: https://nx.dev/reference/project-configuration#targets.
 
-See the [schema.json](./src/executors/schema.json) for the list of available options
+See the [schema.json](./packages/nx/src/executors/schema.json) for the list of available options. This plugin uses `cypress-cloud` for integrating cypress to 3rd party services. Please refer to [cypress-cloud documentation](https://github.com/currents-dev/cypress-cloud) for additional details.
 
 ## Migration
 
@@ -105,7 +109,8 @@ See the [schema.json](./src/executors/schema.json) for the list of available opt
 Create a new release (changelog, tags + github)
 
 ```sh
-npx nx release nx
+# run this command, review and stage the changelog
+cd ./packages/nx && npm run release
 ```
 
 Releasing beta channel:

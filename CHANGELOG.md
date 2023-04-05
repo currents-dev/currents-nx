@@ -1,4 +1,4 @@
-# [2.0.0-beta.0](https://github.com/currents-dev/currents-nx/compare/0.2.1...v2.0.0-beta.0) (2023-04-04)
+# [2.0.0](https://github.com/currents-dev/currents-nx/compare/v2.0.0-beta.0...v2.0.0) (2023-04-05)
 
 ### Feat
 
@@ -6,9 +6,9 @@
 
 ### BREAKING CHANGES
 
-- - Use cypress-cloud as an integration tool
+- Use cypress-cloud as an integration tool
 
-* `@nrwl/cypress` no longer required, versions - the plugin is a standalone implementation that is not dependent on `@nrwl/cypress`
+- `@nrwl/cypress` no longer required, versions - the plugin is a standalone implementation that is not dependent on `@nrwl/cypress`
 
 ## [0.2.1](https://github.com/currents-dev/currents-nx/compare/0.2.0...0.2.1) (2022-12-10)
 

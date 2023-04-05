@@ -1,6 +1,6 @@
 {
   "name": "@currents/nx",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0",
   "description": "Currents plugin for Nx",
   "author": "Andrew Goldis",
   "homepage": "https://currents.dev",
@@ -24,7 +24,7 @@
     "lint": "eslint . --ext .ts",
     "compile": "tsc -d",
     "dev": "tsc -d --watch",
-    "release": "np",
+    "release": "release-it",
     "clean": "rimraf dist"
   },
   "main": "./index.js",
