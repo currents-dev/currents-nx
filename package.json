@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "Currents plugin for Nx",
-  "author": "Andrew Goldis",
+  "author": "Currents Software Inc",
   "homepage": "https://currents.dev",
   "license": "MIT",
   "keywords": [
@@ -26,7 +26,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build nx",
-    "test": "nx test"
+    "test": "nx test nx",
+    "lint": "nx lint nx"
   },
   "devDependencies": {
     "@nrwl/cypress": "15.9.1",
@@ -43,6 +44,7 @@
     "@swc/core": "^1.2.173",
     "@types/jest": "^29.4.0",
     "@types/node": "18.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@vitest/ui": "^0.25.8",
     "babel-jest": "^29.4.1",
     "esbuild": "^0.17.5",
