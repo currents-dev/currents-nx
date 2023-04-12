@@ -36,6 +36,8 @@ Add target `currents` to your project configuration:
         "record": true,
         "parallel": true,
         "cypressConfig": "apps/app-e2e/cypres.config.ts",
+        // "key": "record key obtained from https://app.currents.dev"
+        // "ciBuildId: "ci build id, read more at https://currents.dev/readme/guides/cypress-ci-build-id",
         // ... start a dev server if needed
         "devServerTarget": "my-react-app:serve",
         "testingType": "e2e"
@@ -50,7 +52,7 @@ Create a new configuration file: `currents.config.js` next to `cypress.config.{j
 ```js
 // currents.config.js
 module.exports = {
-  // Get therecord key from https://app.currents.dev, can be any value for self-hosted instance of Sorry Cypress
+  // Get the record key from https://app.currents.dev, can be any value for self-hosted instance of Sorry Cypress
   recordKey: 'XXX',
   // Set the `projectId` and the record key obtained from https://app.currents.dev or your self-hosted instance of Sorry Cypress
   projectId: 'Ij0RfK',
@@ -93,6 +95,22 @@ npx nx run web-e2e:currents --key <recordKey> --ci-build-id hello-currents-nx
 Options can be configured in `project.json` when defining the executor, or when invoking it. Read more about how to configure targets and executors here: https://nx.dev/reference/project-configuration#targets.
 
 See the [schema.json](./packages/nx/src/executors/schema.json) for the list of available options. This plugin uses `cypress-cloud` for integrating cypress to 3rd party services. Please refer to [cypress-cloud documentation](https://github.com/currents-dev/cypress-cloud) for additional details.
+
+### Setting the record key
+
+You can set the record key in one of the following ways:
+
+- set `key` property in `project.json`
+- set `recordKey` in `currents.config.js`
+- set the CLI flag `--recordKey`
+- set `CURRENTS_RECORD_KEY` environment variable
+
+### Setting the project id
+
+You can set the project Id as follows:
+
+- set `projectId` in `currents.config.js`
+- set `CURRENTS_PROJECT_ID` environment variable
 
 ## Migration
 
