@@ -10,7 +10,6 @@ import {
 import { basename, dirname, join } from 'path';
 
 import { CurrentsRunAPI, run } from 'cypress-cloud';
-import { cwd } from 'process';
 
 type CurrentsOptions = CurrentsRunAPI & {
   config?: Partial<{
@@ -18,7 +17,7 @@ type CurrentsOptions = CurrentsRunAPI & {
   }>;
 };
 
-export type Json = { [k: string]: any };
+export type Json = { [k: string]: unknown };
 
 export interface CypressExecutorOptions extends Json {
   cwd: string;
@@ -53,7 +52,7 @@ export default async function cypressExecutor(
   process.env['NX_CYPRESS_TARGET_CONFIGURATION'] = context.configurationName;
   let success;
 
-  for await (const baseUrl of startDevServer(options, context)) {
+  for await (const _baseUrl of startDevServer(options, context)) {
     try {
       success = await runCurrents(options);
       if (!options.watch) break;
@@ -78,19 +77,8 @@ function normalizeOptions(
     process.env['TS_NODE_PROJECT'] = tsConfigPath;
   }
 
-  // warnDeprecatedCypressVersion();
   return options;
 }
-
-// function warnDeprecatedCypressVersion() {
-//   if (installedCypressVersion() < 10) {
-//     logger.warn(stripIndents`
-//   NOTE:
-//   Support for Cypress versions < 10 is deprecated. Please upgrade to at least Cypress version 10.
-//   A generator to migrate from v8 to v10 is provided. See https://nx.dev/cypress/v10-migration-guide
-//   `);
-//   }
-// }
 
 async function* startDevServer(
   opts: CypressExecutorOptions,
@@ -136,8 +124,6 @@ async function* startDevServer(
 async function runCurrents(opts: CypressExecutorOptions) {
   // Cypress expects the folder where a cypress config is present
   const projectFolderPath = dirname(opts.cypressConfig);
-  console.log(cwd());
-  // chdir(resolve(projectFolderPath));
   const options: CurrentsOptions = {
     project: projectFolderPath,
     configFile: basename(opts.cypressConfig),
@@ -164,6 +150,7 @@ async function runCurrents(opts: CypressExecutorOptions) {
   options.record = opts.record;
   options.recordKey = opts.key;
   options.parallel = opts.parallel;
+
   options.ciBuildId = opts.ciBuildId?.toString();
   options.group = opts.group;
 
