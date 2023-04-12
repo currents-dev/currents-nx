@@ -164,9 +164,7 @@ async function runCurrents(opts: CypressExecutorOptions) {
   options.record = opts.record;
   options.recordKey = opts.key;
   options.parallel = opts.parallel;
-  options.ciBuildId = Date.now().toString();
-  // TODO: restore
-  // options.ciBuildId = opts.ciBuildId?.toString();
+  options.ciBuildId = opts.ciBuildId?.toString();
   options.group = opts.group;
 
   if (opts.reporter) {
