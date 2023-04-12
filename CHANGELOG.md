@@ -1,3 +1,13 @@
+
+
+## [2.0.1](https://github.com/currents-dev/currents-nx/compare/v2.0.0...v2.0.1) (2023-04-12)
+
+
+### Bug Fixes
+
+* remove hardcoded ciBuildId ([c412fc9](https://github.com/currents-dev/currents-nx/commit/c412fc90c5bb6cfd74871bcf905d01816450d0b6))
+* remove unused code, add unit tests and lint ([#20](https://github.com/currents-dev/currents-nx/issues/20)) ([e45fcb0](https://github.com/currents-dev/currents-nx/commit/e45fcb08082d79e355b2f1aebd8ea13f1fddec2b))
+
 # [2.0.0](https://github.com/currents-dev/currents-nx/compare/v2.0.0-beta.0...v2.0.0) (2023-04-05)
 
 ### Feat
