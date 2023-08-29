@@ -53,6 +53,7 @@ export default async function cypressExecutor(
   let success;
 
   for await (const _baseUrl of startDevServer(options, context)) {
+    options.baseUrl = _baseUrl;
     try {
       success = await runCurrents(options);
       if (!options.watch) break;
