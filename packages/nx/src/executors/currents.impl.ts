@@ -6,7 +6,7 @@ import {
   parseTargetString,
   readTargetOptions,
   runExecutor,
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { basename, dirname, join } from 'path';
 
 import { CurrentsRunAPI, run } from 'cypress-cloud';

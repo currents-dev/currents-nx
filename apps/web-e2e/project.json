@@ -8,6 +8,7 @@
       "executor": "@currents/nx:currents",
       "options": {
         "projectRoot": "apps/web-e2e",
+        "cypressConfig": "apps/web-e2e/cypress.config.ts",
         "parallel": true,
         "record": true,
         "tag": "nx",
@@ -23,7 +24,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/web-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/web-e2e/**/*.ts"]
       }
     }
   },

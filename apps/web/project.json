@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/vite:build",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
@@ -22,7 +22,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/vite:dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "web:build"
@@ -39,7 +39,7 @@
       }
     },
     "preview": {
-      "executor": "@nrwl/vite:preview-server",
+      "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "web:build"
@@ -61,7 +61,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/web/jest.config.ts",

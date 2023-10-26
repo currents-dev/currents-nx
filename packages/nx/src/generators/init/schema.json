@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "NxCurrentsInit",
-  "cli": "nx",
   "title": "Add Currents Configuration to the workspace",
   "type": "object",
   "properties": {}

@@ -3,7 +3,7 @@ import {
   convertNxGenerator,
   Tree,
   updateJson,
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 
 import { cypressCloudVersion, nxVersion } from '../../utils/versions';
 

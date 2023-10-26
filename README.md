@@ -4,7 +4,7 @@
 
 Integrate Cypress with alternative cloud services like Currents or Sorry Cypress.
 
-The plugin is designed for CI environments and runs Cypress in headless mode. Please use `@nrwl/cypress` for running cypress in interactive mode.
+The plugin is designed for CI environments and runs Cypress in headless mode. Please use `@nx/cypress` for running cypress in interactive mode.
 
 ## Example
 
@@ -64,7 +64,7 @@ module.exports = {
 Add `cypress-cloud/plugin` to `cypress.config.{js|ts|mjs}`
 
 ```ts
-import { nxE2EPreset } from '@nrwl/cypress/plugins/cypress-preset';
+import { nxE2EPreset } from '@nx/cypress/plugins/cypress-preset';
 import { defineConfig } from 'cypress';
 import cloudPlugin from 'cypress-cloud/plugin';
 
@@ -120,7 +120,7 @@ You can set the project Id as follows:
 
 ### Version `1.0.0`
 
-- `@nrwl/cypress` no longer required - the plugin is a standalone implementation that is not dependent on `@nrwl/cypress`. Use the available configuration options to configure the execution of cypress runs.
+- `@nx/cypress` no longer required - the plugin is a standalone implementation that is not dependent on `@nx/cypress`. Use the available configuration options to configure the execution of cypress runs.
 
 ## Release
 
