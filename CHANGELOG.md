@@ -1,5 +1,17 @@
 
 
+# [2.1.0](https://github.com/currents-dev/currents-nx/compare/v2.0.1...v2.1.0) (2023-10-29)
+
+
+### Bug Fixes
+
+* project.json's property devServerTarget is ignored [#24](https://github.com/currents-dev/currents-nx/issues/24) ([#25](https://github.com/currents-dev/currents-nx/issues/25)) ([f37a65c](https://github.com/currents-dev/currents-nx/commit/f37a65c0b5f9e3a97fcd28742524c8c607d5bc4f))
+
+
+### Features
+
+* support nx >= 16.0.0. Issue [#26](https://github.com/currents-dev/currents-nx/issues/26) ([#27](https://github.com/currents-dev/currents-nx/issues/27)) ([453c355](https://github.com/currents-dev/currents-nx/commit/453c3556f09b8b81f9ae7df66ed038e694a4aa08))
+
 ## [2.0.1](https://github.com/currents-dev/currents-nx/compare/v2.0.0...v2.0.1) (2023-04-12)
 
 
