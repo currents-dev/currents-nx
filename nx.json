@@ -4,7 +4,7 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/web"
+    "defaultCollection": "@nx/web"
   },
   "implicitDependencies": {
     "package.json": {
@@ -15,7 +15,7 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nx/workspace/tasks-runners/default",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
@@ -31,13 +31,13 @@
   },
   "defaultProject": "web",
   "generators": {
-    "@nrwl/web:application": {
+    "@nx/web:application": {
       "style": "css",
       "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nrwl/web:library": {
+    "@nx/web:library": {
       "style": "css",
       "linter": "eslint",
       "unitTestRunner": "jest"

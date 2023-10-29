@@ -2,7 +2,6 @@
   "title": "Currents Target",
   "type": "object",
   "outputCapture": "pipe",
-  "cli": "nx",
   "properties": {
     "projectRoot": {
       "type": "string",

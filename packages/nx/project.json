@@ -5,13 +5,12 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/nx",
         "main": "packages/nx/src/index.ts",
         "tsConfig": "packages/nx/tsconfig.lib.json",
-        "updateBuildableProjectDepsInPackageJson": false,
         "assets": [
           "README.md",
           "packages/nx/src/**/*.json",
@@ -43,7 +42,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "packages/nx/jest.config.ts",
