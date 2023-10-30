@@ -1,6 +1,6 @@
 {
   "name": "@currents/nx",
-  "version": "2.2.0",
+  "version": "2.1.0",
   "description": "Currents plugin for Nx",
   "author": "Andrew Goldis",
   "homepage": "https://currents.dev",
@@ -58,9 +58,9 @@
     "@nx/devkit": " >= 16"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^5.1.1",
-    "cypress": "^12.9.0",
-    "cypress-cloud": "^1.7.0",
-    "release-it": "^15.10.1"
+    "@release-it/conventional-changelog": "^7.0.2",
+    "cypress": "^12.17.4",
+    "cypress-cloud": "^1.9.6",
+    "release-it": "^16.2.1"
   }
 }
