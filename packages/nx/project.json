@@ -13,7 +13,7 @@
         "tsConfig": "packages/nx/tsconfig.lib.json",
         "assets": [
           "README.md",
-          "packages/nx/src/**/*.json",
+          "packages/nx/src/**/schema.json",
           "packages/nx/generators.json",
           "packages/nx/migrations.json",
           "packages/nx/executors.json"
