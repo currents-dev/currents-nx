@@ -155,6 +155,8 @@ async function runCurrents(opts: CypressExecutorOptions) {
   options.ciBuildId = opts.ciBuildId?.toString();
   options.group = opts.group;
 
+  options.cloudServiceUrl = opts.cloudServiceUrl;
+
   if (opts.reporter) {
     options['reporter'] = opts.reporter;
   }
