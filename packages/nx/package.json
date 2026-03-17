@@ -25,7 +25,8 @@
     "compile": "tsc -d",
     "dev": "tsc -d --watch",
     "release": "release-it",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "publish:npm": "npm run rm  && npm run build && ./publish.js"
   },
   "main": "./index.js",
   "typings": "./index.d.ts",
